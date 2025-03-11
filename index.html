@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Store - Modern Real-Time Shopping Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <!-- Preload critical JavaScript files -->
+    <link rel="preload" href="js/placeholders.js" as="script">
+    <link rel="preload" href="js/data.js" as="script">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Vertex Store</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <a href="#" class="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                </a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                    <div class="user-dropdown">
+                        <a href="#">Account</a>
+                        <a href="#">Orders</a>
+                        <a href="#">Wishlist</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-carousel">
+                <div class="hero-slide active">
+                    <img src="images/banners/banner-1.jpg" alt="Special Offer">
+                    <div class="hero-content">
+                        <h2>Summer Tech Sale</h2>
+                        <p>Up to 40% off on selected tech gadgets</p>
+                        <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="images/banners/banner-2.jpg" alt="New Arrivals">
+                    <div class="hero-content">
+                        <h2>New Arrivals</h2>
+                        <p>Check out the latest products in our inventory</p>
+                        <a href="shop.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="images/banners/banner-3.jpg" alt="Limited Offer">
+                    <div class="hero-content">
+                        <h2>Limited Time Offer</h2>
+                        <p>Get free shipping on orders over $50</p>
+                        <a href="shop.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="container section-spacing">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <!-- Categories will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="container section-spacing">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid featured-products">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="container section-spacing">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="product-grid new-arrivals">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section class="special-offers section-spacing">
+            <div class="container">
+                <div class="offer-banner">
+                    <img src="images/banners/offer-banner.jpg" alt="Special Offer">
+                    <div class="offer-content">
+                        <h2>Special Deal of the Week</h2>
+                        <p>Get the latest wireless earbuds at 30% off. Limited stock available!</p>
+                        <a href="product.html?id=p9" class="btn btn-primary">View Offer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to receive updates on new products and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Vertex Store is a modern e-commerce platform offering high-quality tech products with real-time features for an enhanced shopping experience.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Digital City</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8901</li>
+                        <li><i class="fas fa-envelope"></i> info@vertexstore.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vertex Store. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifications Container -->
+    <div class="notifications-container"></div>
+
+    <!-- Live Chat -->
+    <button class="chat-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="live-chat">
+        <div class="chat-header">
+            <div class="agent-info">
+                <div class="agent-avatar">
+                    <img src="images/avatars/support-agent.jpg" alt="Support Agent">
+                </div>
+                <div>
+                    <h3>Customer Support</h3>
+                    <div class="agent-status">
+                        <span class="status-indicator online"></span> Online
+                    </div>
+                </div>
+            </div>
+            <div class="chat-controls">
+                <button class="minimize-chat"><i class="fas fa-minus"></i></button>
+                <button class="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chat-body">
+            <div class="message support">
+                <div class="message-bubble">
+                    Welcome to Vertex Store! How can I help you today?
+                </div>
+                <div class="message-time">Just now</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/placeholders.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

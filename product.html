@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Store - Product Details</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload critical JavaScript -->
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="js/data.js" as="script">
+    <link rel="preload" href="js/placeholders.js" as="script">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Vertex Store Logo">
+                        <span>Vertex<strong>Store</strong></span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <form action="shop.html" method="get">
+                        <input type="text" name="search" placeholder="Search products...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <!-- Wishlist -->
+                    <div class="wishlist-icon">
+                        <a href="wishlist.html" title="Wishlist">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge wishlist-count">0</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Cart -->
+                    <div class="cart-icon">
+                        <a href="cart.html" title="Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge cart-count">0</span>
+                        </a>
+                    </div>
+                    
+                    <!-- User -->
+                    <div class="user-dropdown">
+                        <button class="dropdown-btn">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="login.html">Login</a>
+                            <a href="register.html">Register</a>
+                            <a href="account.html">My Account</a>
+                            <a href="orders.html">My Orders</a>
+                            <a href="#" id="logout-btn">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumb -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="shop.html">Shop</a>
+                    <span class="separator">/</span>
+                    <span class="current" id="product-breadcrumb-name">Product Name</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Product Detail Section -->
+        <section class="product-detail-section">
+            <div class="container">
+                <div class="product-detail" id="product-detail">
+                    <!-- Product content will be loaded dynamically -->
+                    <div class="product-loading">
+                        <div class="spinner"></div>
+                        <p>Loading product details...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Product Tabs Section -->
+        <section class="product-tabs-section">
+            <div class="container">
+                <div class="product-tabs">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="description">Description</button>
+                        <button class="tab-btn" data-tab="specifications">Specifications</button>
+                        <button class="tab-btn" data-tab="reviews">Reviews <span class="review-count">(0)</span></button>
+                        <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-panel active" id="description-panel">
+                            <!-- Description content will be loaded dynamically -->
+                            <p class="placeholder-text">Loading description...</p>
+                        </div>
+                        <div class="tab-panel" id="specifications-panel">
+                            <!-- Specifications content will be loaded dynamically -->
+                            <p class="placeholder-text">Loading specifications...</p>
+                        </div>
+                        <div class="tab-panel" id="reviews-panel">
+                            <div class="reviews-container">
+                                <div class="reviews-summary">
+                                    <div class="average-rating">
+                                        <div class="rating-number">0.0</div>
+                                        <div class="rating-stars"></div>
+                                        <div class="rating-count">Based on 0 reviews</div>
+                                    </div>
+                                    <div class="rating-breakdown">
+                                        <div class="rating-bar">
+                                            <span class="rating-level">5 stars</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 0%"></div>
+                                            </div>
+                                            <span class="rating-percent">0%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="rating-level">4 stars</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 0%"></div>
+                                            </div>
+                                            <span class="rating-percent">0%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="rating-level">3 stars</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 0%"></div>
+                                            </div>
+                                            <span class="rating-percent">0%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="rating-level">2 stars</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 0%"></div>
+                                            </div>
+                                            <span class="rating-percent">0%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="rating-level">1 star</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 0%"></div>
+                                            </div>
+                                            <span class="rating-percent">0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reviews-list">
+                                    <!-- Reviews will be loaded dynamically -->
+                                    <p class="no-reviews">No reviews yet. Be the first to review this product!</p>
+                                </div>
+                                <div class="write-review">
+                                    <h3>Write a Review</h3>
+                                    <form id="review-form">
+                                        <div class="form-group">
+                                            <label for="review-name">Your Name</label>
+                                            <input type="text" id="review-name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="review-email">Your Email</label>
+                                            <input type="email" id="review-email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Your Rating</label>
+                                            <div class="rating-input">
+                                                <i class="far fa-star" data-rating="1"></i>
+                                                <i class="far fa-star" data-rating="2"></i>
+                                                <i class="far fa-star" data-rating="3"></i>
+                                                <i class="far fa-star" data-rating="4"></i>
+                                                <i class="far fa-star" data-rating="5"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="review-title">Review Title</label>
+                                            <input type="text" id="review-title" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="review-content">Your Review</label>
+                                            <textarea id="review-content" rows="5" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-panel" id="shipping-panel">
+                            <h3>Shipping Information</h3>
+                            <p>We offer the following shipping options:</p>
+                            <ul>
+                                <li><strong>Standard Shipping:</strong> 3-5 business days (Free for orders over $50)</li>
+                                <li><strong>Express Shipping:</strong> 1-2 business days ($9.99)</li>
+                                <li><strong>Same Day Delivery:</strong> Available in select areas ($14.99)</li>
+                            </ul>
+                            
+                            <h3>Return Policy</h3>
+                            <p>We want you to be completely satisfied with your purchase. If you're not happy with your order, you can return it within 30 days of delivery for a full refund or exchange.</p>
+                            <p>To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
+                            
+                            <h3>How to Initiate a Return</h3>
+                            <ol>
+                                <li>Log in to your account and go to your order history</li>
+                                <li>Select the order and item(s) you wish to return</li>
+                                <li>Choose your preferred return method</li>
+                                <li>Print the return label and follow the instructions</li>
+                            </ol>
+                            
+                            <p>If you have any questions about our shipping or return policies, please <a href="contact.html">contact our customer service team</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Related Products Section -->
+        <section class="related-products-section">
+            <div class="container">
+                <h2 class="section-title">Related Products</h2>
+                <div class="related-products-slider">
+                    <!-- Related products will be loaded dynamically -->
+                    <div class="products-loading">
+                        <div class="spinner"></div>
+                        <p>Loading related products...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recently Viewed Section -->
+        <section class="recently-viewed-section">
+            <div class="container">
+                <h2 class="section-title">Recently Viewed</h2>
+                <div class="recently-viewed-products">
+                    <!-- Recently viewed products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Subscribe to our Newsletter</h2>
+                        <p>Get the latest updates on new products and special offers!</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Vertex Store Logo">
+                        <span>Vertex<strong>Store</strong></span>
+                    </a>
+                    <p>Your one-stop shop for the latest technology gadgets and accessories.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Service -->
+                <div class="footer-links">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley, CA</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@vertexstore.com</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Vertex Store. All Rights Reserved.</p>
+                </div>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <img src="images/payments.png" alt="Payment Methods">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Notifications Container -->
+    <div class="notifications-container"></div>
+    
+    <!-- Live Chat -->
+    <div class="live-chat">
+        <button class="chat-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chat-notification"></span>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fas fa-headset"></i>
+                    <span>Live Support</span>
+                </div>
+                <div class="chat-actions">
+                    <button class="chat-minimize"><i class="fas fa-minus"></i></button>
+                    <button class="chat-close"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-messages">
+                    <div class="message system">
+                        <div class="message-content">
+                            <p>Welcome to Vertex Store support! How can we help you today?</p>
+                            <span class="message-time">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <textarea placeholder="Type your message..."></textarea>
+                <button class="send-message" disabled><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Product Image Zoom Modal -->
+    <div class="image-zoom-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <img src="" alt="Product Image" id="zoomed-image">
+            <div class="zoom-controls">
+                <button class="zoom-in"><i class="fas fa-search-plus"></i></button>
+                <button class="zoom-out"><i class="fas fa-search-minus"></i></button>
+                <button class="zoom-reset"><i class="fas fa-redo"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/placeholders.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html> 
