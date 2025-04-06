@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,80 +17,52 @@
     <link rel="preload" href="js/data.js" as="script">
     <link rel="preload" href="js/placeholders.js" as="script">
 </head>
+
 <body>
     <!-- Header Section -->
-    <header class="main-header">
+    <header>
         <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="images/logo.svg" alt="Vertex Store Logo">
-                        <span>Vertex<strong>Store</strong></span>
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="mobile-menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html" class="active">Shop</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Search Bar -->
+            <div class="logo">
+                <h1>Vertex Store</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
                 <div class="search-bar">
-                    <form action="shop.html" method="get">
-                        <input type="text" name="search" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
                 </div>
-                
-                <!-- User Actions -->
-                <div class="user-actions">
-                    <!-- Wishlist -->
-                    <div class="wishlist-icon">
-                        <a href="wishlist.html" title="Wishlist">
-                            <i class="fas fa-heart"></i>
-                            <span class="badge wishlist-count">0</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Cart -->
-                    <div class="cart-icon">
-                        <a href="cart.html" title="Cart">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="badge cart-count">0</span>
-                        </a>
-                    </div>
-                    
-                    <!-- User -->
+                <a href="#" class="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                </a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
                     <div class="user-dropdown">
-                        <button class="dropdown-btn">
-                            <i class="fas fa-user-circle"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="login.html">Login</a>
-                            <a href="register.html">Register</a>
-                            <a href="account.html">My Account</a>
-                            <a href="orders.html">My Orders</a>
-                            <a href="#" id="logout-btn">Logout</a>
-                        </div>
+                        <a href="#">Account</a>
+                        <a href="#">Orders</a>
+                        <a href="#">Wishlist</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    
+
     <!-- Main Content -->
     <main>
         <!-- Shop Header -->
@@ -103,7 +76,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Shop Content -->
         <section class="shop-content">
             <div class="container">
@@ -115,7 +88,7 @@
                                 <h3>Filters</h3>
                                 <button id="reset-filters" class="clear-filters">Clear All</button>
                             </div>
-                            
+
                             <!-- Categories Filter -->
                             <div class="filter-block">
                                 <h4 class="filter-title">Categories</h4>
@@ -123,7 +96,7 @@
                                     <!-- Categories will be loaded dynamically with JavaScript -->
                                 </ul>
                             </div>
-                            
+
                             <!-- Price Range Filter -->
                             <div class="filter-block">
                                 <h4 class="filter-title">Price Range</h4>
@@ -148,7 +121,7 @@
                                     <button id="price-filter-btn" class="apply-price">Apply</button>
                                 </div>
                             </div>
-                            
+
                             <!-- Availability Filter -->
                             <div class="filter-block">
                                 <h4 class="filter-title">Availability</h4>
@@ -165,7 +138,7 @@
                                     </label>
                                 </div>
                             </div>
-                            
+
                             <!-- Live Stock Updates -->
                             <div class="filter-block">
                                 <div class="stock-updates">
@@ -188,7 +161,7 @@
                             </div>
                         </div>
                     </aside>
-                    
+
                     <!-- Product Grid -->
                     <div class="shop-main">
                         <!-- Shop Controls -->
@@ -196,7 +169,7 @@
                             <div class="product-count">
                                 <span id="product-count">0</span> Products Found
                             </div>
-                            
+
                             <div class="shop-actions">
                                 <!-- View Mode -->
                                 <div class="view-mode">
@@ -207,7 +180,7 @@
                                         <i class="fas fa-list"></i>
                                     </button>
                                 </div>
-                                
+
                                 <!-- Sort By -->
                                 <div class="sort-by">
                                     <label for="sort-by">Sort By:</label>
@@ -222,12 +195,12 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Products Grid -->
                         <div class="shop-grid product-grid">
                             <!-- Products will be loaded dynamically with JavaScript -->
                         </div>
-                        
+
                         <!-- Pagination -->
                         <div class="pagination">
                             <button class="prev-page" disabled>
@@ -244,7 +217,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Newsletter Section -->
         <section class="newsletter-section">
             <div class="container">
@@ -261,116 +234,95 @@
             </div>
         </section>
     </main>
-    
+
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <!-- Footer Logo -->
-                <div class="footer-logo">
-                    <a href="index.html">
-                        <img src="images/logo.svg" alt="Vertex Store Logo">
-                        <span>Vertex<strong>Store</strong></span>
-                    </a>
-                    <p>Your one-stop shop for the latest technology gadgets and accessories.</p>
-                </div>
-                
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Customer Service -->
-                <div class="footer-links">
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="account.html">My Account</a></li>
-                        <li><a href="orders.html">Order Tracking</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley, CA</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@vertexstore.com</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Vertex Store is a modern e-commerce platform offering high-quality tech products with real-time
+                        features for an enhanced shopping experience.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; 2023 Vertex Store. All Rights Reserved.</p>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
                 </div>
-                <div class="payment-methods">
-                    <span>We Accept:</span>
-                    <img src="images/payments.png" alt="Payment Methods">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Digital City</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8901</li>
+                        <li><i class="fas fa-envelope"></i> info@vertexstore.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vertex Store. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
                 </div>
             </div>
         </div>
     </footer>
-    
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
+
     <!-- Notifications Container -->
     <div class="notifications-container"></div>
-    
+
     <!-- Live Chat -->
+    <button class="chat-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+    
     <div class="live-chat">
-        <button class="chat-toggle">
-            <i class="fas fa-comments"></i>
-            <span class="chat-notification"></span>
-        </button>
-        <div class="chat-container">
-            <div class="chat-header">
-                <div class="chat-title">
-                    <i class="fas fa-headset"></i>
-                    <span>Live Support</span>
+        <div class="chat-header">
+            <div class="agent-info">
+                <div class="agent-avatar">
+                    <img src="images/avatars/support-agent.jpg" alt="Support Agent">
                 </div>
-                <div class="chat-actions">
-                    <button class="chat-minimize"><i class="fas fa-minus"></i></button>
-                    <button class="chat-close"><i class="fas fa-times"></i></button>
-                </div>
-            </div>
-            <div class="chat-body">
-                <div class="chat-messages">
-                    <div class="message system">
-                        <div class="message-content">
-                            <p>Welcome to Vertex Store support! How can we help you today?</p>
-                            <span class="message-time">Just now</span>
-                        </div>
+                <div>
+                    <h3>Customer Support</h3>
+                    <div class="agent-status">
+                        <span class="status-indicator online"></span> Online
                     </div>
                 </div>
             </div>
-            <div class="chat-input">
-                <textarea placeholder="Type your message..."></textarea>
-                <button class="send-message" disabled><i class="fas fa-paper-plane"></i></button>
+            <div class="chat-controls">
+                <button class="minimize-chat"><i class="fas fa-minus"></i></button>
+                <button class="close-chat"><i class="fas fa-times"></i></button>
             </div>
         </div>
+        <div class="chat-body">
+            <div class="message support">
+                <div class="message-bubble">
+                    Welcome to Vertex Store! How can I help you today?
+                </div>
+                <div class="message-time">Just now</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
     </div>
-    
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/placeholders.js"></script>
@@ -378,4 +330,5 @@
     <script src="js/animations.js"></script>
     <script src="js/shop.js"></script>
 </body>
-</html> 
+
+</html>
